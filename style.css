@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root{
-    --primary-color: #87ab69;
-    --secondary-color: #4b6043;
+    --primary-color: #d0637c;
+    --secondary-color: #edeef3;
 }
 *{
     box-sizing: border-box;
@@ -13,6 +13,21 @@ body{
     font-family: "Poppins", sans-serif;
     margin: 0;
 }
+
+html{
+    transition: all 0.5s ease-in;
+}
+
+html.dark{
+    --primary-color: #fff;
+    --secondary-color: #161616;
+}
+
+html.dark{
+    background-color: #111;
+    color: var(--primary-color);
+}
+
 
 header{
    padding: 1rem; 
@@ -29,11 +44,11 @@ header{
     font-family: "Poppins", sans-serif;
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    color: #f2f3f4;
+    color: #edeef3;
 }
 
 .input::placeholder{
-    color: #ddead1;
+    color: #d0637c;
 }
 
 .input:focus{
@@ -48,9 +63,76 @@ header{
     cursor: pointer;
     font-size: 1.5rem;
     padding: 0.5rem 1rem;
-    color: #87ab69; 
+    color: #d0637c; 
    
 }
+
+.container{
+    position: relative;
+    background: #000;
+    display: flex;
+    padding: 5px 5px 7px 5px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    opacity: 0.7;
+    right: 36px;
+    top: 40px;
+    transition: 0.5s ease;
+    z-index: 1;
+     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2); 
+}
+
+html.dark .container{
+    background: transparent;
+}
+
+.container ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+}
+
+.container li{
+    text-align: center;
+    text-decoration: none;
+    margin-top: 0px;
+    list-style: none;
+    border-bottom: 0.2px solid #d0637c;
+   
+}
+
+ li:last-child{
+    border-bottom: none;
+}
+
+.container li a{
+    display: block;
+    padding: 8px 16px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+    text-decoration: none;
+    font-size: 13px;
+    color: #d0637c;
+}
+
+.container .toggle{
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 0;
+    border-radius: 10px;
+    padding: 4px 12px;
+    
+    top: 100px; 
+}
+
+
+    
+    
+
 
 main{
     display: flex;
@@ -63,33 +145,38 @@ main{
 .book{
     overflow: hidden;
     width: 300px;
+    
   
-    margin: 0.5rem;
+    margin: 1rem;
     background-color: var(--secondary-color);
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2); */
     position: relative;
     border-radius: 8px;
 
 }
 
 .book img{
-    width: 100%; 
+    width: 100%;
+    /* object-fit: cover;
+    width: 300px;
+    position: absolute; */
+   
     
 }
 
 .book .info{
-    color: #f2f3f4;
+    /* position: absolute; */
+    color: #d0637c;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0.5rem 0.5rem 0.5rem;
     letter-spacing: 0.6px;
+    left: 0;
 }
 
-.info h4{
-    margin-top: 0;
-}
+
 
 
 .info span{
@@ -98,9 +185,14 @@ main{
     border-radius: 2px;
     font-weight: bold;
     position: absolute;
-    right: 0;
-    top: 57%;
+    right: 10px;
+    top: 72%;
+    color: #edeef3;
     
+}
+
+html.dark .info span{
+    color: #d0637c;
 }
 
 .synopsis{
@@ -118,6 +210,10 @@ main{
     
 }
 
+html.dark .synopsis{
+    background-color: #111;
+}
+
 .synopsis .text{
   line-height: 20px;  
   font-size: 14px;
@@ -130,9 +226,9 @@ main{
     transform: translateY(0);
 }
 
-.book button{
+.book .add{
    margin: auto;
-    background-image: linear-gradient(135deg, #4b6043 40%, #87ab69);
+    background-image: linear-gradient(135deg, #d0637c 40%, #dd868c);
     border: 0;
   border-radius: 30px;
   box-sizing: border-box;
@@ -150,6 +246,27 @@ main{
   transition: all 200ms;
 }
 
+/* .book .read{
+    margin: auto;
+    background-image: linear-gradient(135deg, #4b6043 40%, #87ab69);
+    border: 0;
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: #f2f3f4;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  height: 45px;
+  max-width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 1px;  
+  transition: all 200ms;  
+  display: none;
+} */
+
 .book button:hover{
     outline: none;
     transform: scale(.9);
@@ -158,24 +275,5 @@ main{
 
 .book button:active{
     outline: none;
-}
-
-#toasts{
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.toast{
-    background-color: #f2f3f4;
-    border-radius: 5px;
-    padding: 1rem 2rem;
-    margin: 0.5rem;
-}
-.toast.info{
-    color: rebeccapurple;
 }
 
