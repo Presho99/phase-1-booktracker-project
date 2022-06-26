@@ -4,12 +4,14 @@ const API_URL = 'http://localhost:3000/books'
 const form = document.getElementById('form')
 const input = document.getElementById('input')
 const main = document.getElementById('main') 
-// const API_URL = ' http://localhost:3000/books'
 
-// const form = document.getElementById('form')
-// const input = document.getElementById('input')
-// const main = document.getElementById('main')
-// //get initial movies
+getBooks(API_URL)
+//Create a function to get books
+function getBooks() {
+    fetch(API_URL)
+    .then(res => res.json)
+    .then (books => showBooks(books))
+}
 
 // getBooks(API_URL)
 
