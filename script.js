@@ -14,8 +14,10 @@ const book = document.querySelector('.book')
 //prevent form submission
 form.addEventListener('submit', (e) => {
     e.preventDefault()
-
+     
 })
+
+
 
 //hide menu
 function hideMenu() {
@@ -78,7 +80,9 @@ function showBooks(books) {
         `
 
        main.appendChild(bookEl) 
-       
+       bookEl.addEventListener("dblclick", function(){
+           alert("Yaaay...you're acing it. Let's get lost in another one!")
+       })
     } )
 
 
