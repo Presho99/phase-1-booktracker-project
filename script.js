@@ -4,6 +4,31 @@ const API_URL = 'http://localhost:3000/books'
 const form = document.getElementById('form')
 const input = document.getElementById('input')
 const main = document.getElementById('main')
+
+const toggle = document.querySelector('.toggle')
+
+
+const book = document.querySelector('.book')
+
+
+//prevent form submission
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+})
+
+//hide menu
+function hideMenu() {
+    const container = document.getElementById('container')
+      if(container.className == "off") {
+          container.className = "on"
+
+      }else{
+          container.className = "off"
+      }
+}
+
+
 //get the books
 
 getBooks(API_URL)
@@ -20,8 +45,8 @@ function showBooks(books) {
     main.innerHTML = ""
 
    books.forEach((book) => {
-        const {title, author, pages, description, image} = book
-    
+        const {title, author, pages, description, image, message} = book
+        
       
     
         const bookEl = document.createElement('div')
@@ -42,40 +67,38 @@ function showBooks(books) {
                     <p>${description}</p>
                    </div>
                   
-                   <button class="add"><span>To read</span></button>
+                   <button class="add"><span>To read</span></button> 
+                   
+                    
+                 
+
                </div>
         </div>
+     
         `
 
        main.appendChild(bookEl) 
+       
     } )
 
 
 }
-//prevent form submission
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
 
-    // const inputTerm = input.value
 
-    // if(inputTerm !== '') {
-    //     getBooks(API_URL + inputTerm)
-
-    //     input.value = ""
-    // }else {
-    //     window.location.reload()
-    // }
+toggle.addEventListener('click', (e) => {
+    const html = document.querySelector('html')
+    if(html.classList.contains('dark')) {
+        html.classList.remove('dark')
+        e.target.innerHTML = 'Dark Mode'
+    }else {
+        html.classList.add('dark')
+        e.target.innerHTML = 'Light mode'
+    }
+    
 })
 
-//Mark the read books
-const noti = document.getElementsByClassName('fa-solid fa-book-open')
-const select = document.querySelector('.select')
-const button = document.querySelector('.add')
 
-for(but of button) {
-    but.addEventListener('click', (e) => {
-        const read = Number(noti.getAttribute('data-count') || 0)
-        noti.setAttribute('data-count', read + 1)
-        noti.classList.add('zero')
-    })
-} 
+
+
+
+
