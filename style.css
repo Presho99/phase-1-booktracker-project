@@ -69,21 +69,11 @@ html.dark .input:focus{
     color: #d0637c;  
 }
 
-.user.active .fa-user{
-    display: none;
-}
-
-.user .fa-book-open-reader{
-    display: none;
-}
-
-.user.active .fa-book-open-reader{
-    display: block;
-}
 
 
 
-.container{
+
+#container{
     position: relative;
     background: #000;
     display: flex;
@@ -96,28 +86,30 @@ html.dark .input:focus{
     transition:  0.5s ease;
     z-index: 1;
      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2); 
-     display: none;
+     
 }
 
-.user.active .container{
+#container.off{
+    display:none;
+}
+
+#container.on{
     display: block;
 }
 
-
-
-html.dark .container{
+html.dark #container{
     background: transparent;
     
 }
 
-.container ul{
+#container ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
     width: 200px;
 }
 
-.container li{
+#container li{
     text-align: center;
     text-decoration: none;
     margin-top: 0px;
@@ -126,11 +118,11 @@ html.dark .container{
    
 }
 
- li:last-child{
+ #container li:last-child{
     border-bottom: none;
 }
 
-.container li a{
+#container li a{
     display: block;
     padding: 8px 16px;
     width: 60px;
@@ -142,7 +134,7 @@ html.dark .container{
     color: #d0637c;
 }
 
-.container .toggle{
+#container .toggle{
     cursor: pointer;
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -169,27 +161,18 @@ main{
 .book{
     overflow: hidden;
     width: 300px;
-    
-  
     margin: 1rem;
     background-color: var(--secondary-color);
-    /* box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2); */
     position: relative;
     border-radius: 8px;
 
 }
 
 .book img{
-    width: 100%;
-    /* object-fit: cover;
-    width: 300px;
-    position: absolute; */
-   
-    
+    width: 100%;   
 }
 
 .book .info{
-    /* position: absolute; */
     color: #d0637c;
     display: flex;
     flex-direction: column;
@@ -227,7 +210,6 @@ html.dark .info span{
     left: 0;
     right: 0;
     bottom: 0%;
-    max-height: 100;
     transform: translateY(100%);
     transition: transform 0.2s ease;
     
@@ -243,8 +225,6 @@ html.dark .synopsis{
   font-size: 14px;
   
 }
-
-
 
 .book:hover .synopsis{
     transform: translateY(0);
@@ -270,28 +250,9 @@ html.dark .synopsis{
   transition: all 200ms;
 }
 
-.book .read{
-    margin: auto;
-    background-image: linear-gradient(135deg, #4b6043 40%, #87ab69);
-    border: 0;
-  border-radius: 30px;
-  box-sizing: border-box;
-  color: #f2f3f4;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Poppins", sans-serif;
-  height: 45px;
-  max-width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 1px;  
-  transition: all 200ms;  
-  display: none;
-}
 
-.book button:hover{
+
+.book .add:hover{
     outline: none;
     transform: scale(.9);
     opacity: .95;
