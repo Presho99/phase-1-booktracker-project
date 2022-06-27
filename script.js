@@ -17,18 +17,28 @@ form.addEventListener('submit', (e) => {
      
 })
 
+//hideMenu
+function hideMenu(){
+    const container = document.getElementById('container')
+    if(container.className == "off") {
+        container.className = "on"
+    }else {
+        container.className = "off"
+    }
+}
+
 
 
 //hide menu
-function hideMenu() {
-    const container = document.getElementById('container')
-      if(container.className == "off") {
-          container.className = "on"
+// function hideMenu() {
+//     const container = document.getElementById('container')
+//       if(container.className == "off") {
+//           container.className = "on"
 
-      }else{
-          container.className = "off"
-      }
-}
+//       }else{
+//           container.className = "off"
+//       }
+// }
 
 
 //get the books
