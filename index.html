@@ -11,22 +11,26 @@
 <body>
      <!-- Header -->
      <header>
+        <div class="formCont">
+            <form id="form" autocomplete="off">
+                <input type="text" id="input" class="input" placeholder="Enter book here">
+            </form>
+        </div>
         
-        <form id="form">
-            <input type="text" id="input" class="input" placeholder="Enter book here">
-        </form>
         
         
         <div class="user">
             <i class="fa-regular fa-user" onclick="hideMenu()"></i> 
-       
+        </div>
+        <div class="back">
+            <i class="fa-solid fa-arrow-left-long"></i>
         </div>
 
         <div class="off" id="container">
             <ul>
                <li><a href="#">Account</a></li>
-               <li><a href="#">Profile</a></li>
-               <li><a href="#">Updates</a></li>
+               <li><a href="#">Settings</a></li>
+               
                <li><button class="toggle">Dark Mode</button></li>
             </ul>
            
@@ -36,16 +40,10 @@
     </header>
 
     <!-- Main section  -->
-    <main id="main">
-                       
-        
-        
-        
-        
-
-       
-
-    </main>
+    <div id="headMain">
+        <main id="main"></main>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
