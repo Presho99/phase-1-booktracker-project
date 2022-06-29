@@ -15,3 +15,4 @@ i)Submit: Prevents the default behaviour of form submit.
 ii)Click :All the buttons and the 2 icons(user and back) located in the header make use of the click event listener.
 iii)Input: This event listener is used when typing a book title in the search bar.
 iv)Double click: Once any book is double-cliked, an alert with a message for the user appears on the screen.
+[Screencast from 29-06-2022  4:42:12 WD.webm](https://user-images.githubusercontent.com/73560150/176343260-606f5e38-6ae3-46f7-94a1-b0a461534cc4.webm)
